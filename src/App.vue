@@ -8,5 +8,5 @@ import Home from './pages/Home.vue';
 
 <style lang="scss">
   @use "./assets/scss/main.scss";
-  @use "./assets/scss/global.scss"
+  @use "./assets/scss/global.scss";
 </style>
