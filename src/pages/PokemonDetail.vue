@@ -3,7 +3,7 @@
 
 <template>
     <main>
-          <h2 class="title" id="title">Lista Pokemones</h2>
+          <h2 class="title" id="title">Pokemon Detail</h2>
           <div id="container" class="container">
           </div>
     </main>
@@ -12,4 +12,3 @@
 <style lang="scss">
     @use "../assets/scss/pages/home";
 </style>
-

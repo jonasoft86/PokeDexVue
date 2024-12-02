@@ -1,9 +1,10 @@
 <script setup lang="ts">
+    
 </script>
 
 <template>
     <main>
-          <h2 class="title" id="title">Lista Pokemones</h2>
+          <h2 class="title" id="title">Teams</h2>
           <div id="container" class="container">
           </div>
     </main>
@@ -12,4 +13,3 @@
 <style lang="scss">
     @use "../assets/scss/pages/home";
 </style>
-
