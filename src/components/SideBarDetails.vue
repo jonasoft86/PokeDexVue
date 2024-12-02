@@ -17,21 +17,12 @@
         <nav>
             <ul class="menu">
                 <li>
-                    <router-link to="/" 
-                        class="boton-menu"
-                        activeClass="active"
-                    >
-                        <Icon icon="material-symbols:home-outline" width="36" height="36" />
-                        Principal
-                    </router-link>
-                </li>
-                <li>
                     <router-link to="/team" 
                         class="boton-menu boton-carrito"
                         activeClass="active"
                     >
-                        <Icon icon="healthicons:heart-outline" width="36" height="36" /> 
-                        Teams
+                        <Icon icon="mdi:arrow-left-bold-box" width="36" height="36" />
+                        Volver a Teams
                         <span id="numerito" class="numerito">0</span>
                     </router-link>
                 </li>
