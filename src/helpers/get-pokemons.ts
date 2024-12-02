@@ -10,6 +10,8 @@ const getPokemons = async(): Promise<Pokemon[]> => {
                 id: data.id,
                 name: data.name,
                 frontSprite: data.sprites.front_default,
+                types: data.types,
+                sprites: data.sprites
             }
         });
         pokemonPromises.push(pokemonPromise);

@@ -12,11 +12,13 @@ defineProps<Props>();
 
 
 <template>
-    
-        <PokemonCard 
-           v-for="pokemon of $props.pokemons" 
-           :key="pokemon.id"
-           :pokemon="pokemon" />
+    <div>
+    <PokemonCard 
+        v-for="pokemon of $props.pokemons" 
+        :key="pokemon.id"
+        :pokemon="pokemon" 
+    />
+</div>
 
 </template>
 

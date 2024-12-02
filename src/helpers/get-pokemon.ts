@@ -8,6 +8,8 @@ const getPokemonById = async(id: string): Promise<Pokemon> => {
         id: data.id,
         name: data.name,
         frontSprite: data.sprites.front_default,
+        types: data.types,
+        sprites: data.sprites
     }
 }
 

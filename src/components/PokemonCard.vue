@@ -11,6 +11,7 @@ const props=defineProps<Props>();
 
 const router = useRouter();
 
+/*
 const goTo = () => {
     router.push(
         {
@@ -19,37 +20,37 @@ const goTo = () => {
         }
     );
 }
+*/
 
 </script>
 
 
 <template>
-    <div class="pokemon-card" @click="goTo()">
-        <img :src="pokemon.frontSprite" :alt="pokemon.name">
-        <h3>{{ pokemon.name }}</h3>
+    <div :class="`${ `Info tipo ${pokemon.types[0].type.name}`}`">
+        <div class="nombre">
+            <h1>{{pokemon.name}}</h1>
+        </div>
+        <div class="tipos" v-for="(poke, index) in pokemon.types">
+            <div :key="index" class="tipo">
+                <span>{{poke.type.name}}</span>
+            </div>
+        </div>
+        <div>
+            <img
+                :src="pokemon.sprites.other?.dream_world?.front_default"
+                :alt="pokemon.name"
+                class="imagen"
+            />
+        </div>
+        <div class="select">
+            <button class="botonSelect" >
+                Seleccionar
+            </button>
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.pokemon-card {
-    margin-right: 5px;
-    margin-left: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-img {
-    width: 150px;
-    border-radius: 5px 5px 0px 0px;
-    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.1);
-    transition: all 0.5s;
-}
-
-img:hover {
-    box-shadow: 0px 2px 10px rgba(158, 158, 158, 0.5);
-    transition: all 0.5s;
-}
+@use "../assets/scss/pokemonTypes.scss";
+@use "../assets/scss/components/pokemonCard.scss";
 </style>

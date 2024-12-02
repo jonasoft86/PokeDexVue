@@ -12,11 +12,6 @@ main {
 }
 
 .container {
-    /*
-    display: grid;
-    grid-template-columns: repeat(1, 4fr);
-    gap: 1rem;
-    */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;

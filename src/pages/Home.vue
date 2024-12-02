@@ -10,7 +10,7 @@
         <h1 v-if="isLoading">Cargando lista Pokemons...</h1>
         <div v-else-if="isError">{{ error }}</div>
           <div id="container" class="container">
-            <PokemonCardList v-if="!isLoading" class="container" :pokemons="pokemons ?? []"></PokemonCardList>
+            <PokemonCardList v-if="!isLoading" :key=0 class="container" :pokemons="pokemons ?? []"></PokemonCardList>
           </div>
     </main>
 </template>
