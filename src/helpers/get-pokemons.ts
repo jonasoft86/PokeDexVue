@@ -2,7 +2,6 @@ import pokemonApi from "../api/api"
 import type { PokemonListResponse, Pokemon, PokemonResponse } from "../interfaces"
 
 const getPokemons = async(index: number): Promise<Pokemon[]> => {
-    console.log(index)
     const perPage = 25;
     const newLink = `https://pokeapi.co/api/v2/pokemon?offset=${index*perPage}&limit=${perPage}`;
     const { data } = await pokemonApi.get<PokemonListResponse>(newLink);

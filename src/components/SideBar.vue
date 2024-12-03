@@ -1,8 +1,13 @@
 <script setup lang="ts">
     import { Icon } from '@iconify/vue';
     import { SideBarProps } from '../interfaces';
+    import { usePokemonTeams } from '../store/pokemonTeam';
+    import { storeToRefs } from 'pinia';
 
     const props=defineProps<SideBarProps>();
+
+    const store = usePokemonTeams();
+    const pokemonTeams = storeToRefs(store);
 </script>
 
 <template>
@@ -32,7 +37,7 @@
                     >
                         <Icon icon="healthicons:heart-outline" width="36" height="36" /> 
                         Teams
-                        <span id="numerito" class="numerito">0</span>
+                        <span id="numerito" class="numerito">{{pokemonTeams.pokemonTeams.value.length}}</span>
                     </router-link>
                 </li>
             </ul>

@@ -22,7 +22,6 @@ export const usePokemonStore = defineStore('characters', () => {
   }
 
   function setPageCharacter(_currentPage: number) {
-    if (currentPage.value === _currentPage || !_currentPage) return;
     currentPage.value = _currentPage;
   }
 

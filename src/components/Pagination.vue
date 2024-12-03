@@ -51,7 +51,6 @@
       });
   
       const goToPage = (pageNumber: number) => {
-        console.log(pageNumber)
         emit('changePage', pageNumber);
       };
   

@@ -1,26 +1,31 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-import type { Pokemon } from '../interfaces';
+    import { usePokemonTeams } from '../store/pokemonTeam';
+    import { useRouter } from 'vue-router';
+    import type { Pokemon } from '../interfaces';
+    import { storeToRefs } from 'pinia';
 
+    interface Props {
+        pokemon: Pokemon
+    }
 
-interface Props {
-    pokemon: Pokemon
-}
+    const props=defineProps<Props>();
 
-const props=defineProps<Props>();
+    const router = useRouter();
 
-const router = useRouter();
+    const store = usePokemonTeams();
+    //const setPokemon = storeToRefs(store);
 
-/*
-const goTo = () => {
-    router.push(
-        {
-            name: 'pokemon-id',
-            params: {id: props.pokemon.id}
-        }
-    );
-}
-*/
+    /*
+    const goTo = () => {
+        router.push(
+            {
+                name: 'pokemon-id',
+                params: {id: props.pokemon.id}
+            }
+        );
+    }
+    */
+
 
 </script>
 
@@ -43,8 +48,10 @@ const goTo = () => {
             />
         </div>
         <div class="select">
-            <button class="botonSelect" >
-                Seleccionar
+            <button 
+                class="botonSelect" 
+                @click="store.setPokemon(pokemon)" >
+                    Seleccionar
             </button>
         </div>
     </div>

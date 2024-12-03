@@ -3,7 +3,7 @@
     import { usePokemons } from '../composables/';
     import Pagination from '../components/Pagination.vue';
 
-    let { pokemons, isLoading, isError, error, currentPage, totalPages, getPage } = usePokemons();
+    const { pokemons, isLoading, isError, error, currentPage, getPage } = usePokemons();
 
 </script>
 
@@ -19,7 +19,7 @@
                 @changePage="getPage" 
         />   
         <div id="container" class="container"> 
-        <PokemonCardList v-if="!isLoading" :key=0 class="container" :pokemons="pokemons ?? []"></PokemonCardList>
+            <PokemonCardList v-if="!isLoading" :key=0 class="container" :pokemons="pokemons ?? []"></PokemonCardList>
         </div>
     </main>
 </template>
