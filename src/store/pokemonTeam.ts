@@ -8,6 +8,7 @@ export const usePokemonTeams = defineStore('charactersTeams', () => {
   const currentCharacter = ref<Pokemon>();
 
   const setPokemon = (_character: Pokemon) : void => {
+    console.log(_character)
     if(pokemonTeams.value.length>=6){
       Swal.fire({
         title: 'Máximo solo 6 pokemones',

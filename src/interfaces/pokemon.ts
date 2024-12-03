@@ -1,4 +1,4 @@
-import { Sprites, Type } from "./pokemonResponse";
+import { Sprites, Stat, Type } from "./pokemonResponse";
 
 export type ResultSearch = Pokemon[];
 
@@ -9,4 +9,5 @@ export interface Pokemon
     frontSprite: string;
     types: Type[];
     sprites: Sprites;
+    stats: Stat[];
 }

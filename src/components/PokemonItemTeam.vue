@@ -42,6 +42,15 @@
             />
         </div>
 
+        <div class="pokemon-stats">
+            <div class="stat-row" v-for="(stat, index) in pokemon.stats" :key="index">
+                    <div>{{ stat.stat.name }}</div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-bg" :style="{width: `${stat.base_stat-30}%`}">{{ stat.base_stat }}</div>
+                    </div>
+            </div>
+        </div>
+
         <div class="select">
             <button 
                 class="botonSelect" 
@@ -60,4 +69,39 @@
 <style lang="scss" scoped>
 @use "../assets/scss/pokemonTypes.scss";
 @use "../assets/scss/components/pokemonCard.scss";
+
+.Info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.Info .pokemon-stats {
+    display:flexbox;
+    justify-content:center;
+    align-items:flex-end;
+ 
+    position: relative;
+    background-color: #fff;
+    margin-top: 1rem;
+ 
+}
+
+
+.pokemon-stats .stat-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    margin: .5rem 0;
+    font-size: 10px;
+}
+
+.pokemon-stats .stat-bar {
+    background-color: #a2a2a2;
+}
+
+.pokemon-stats .stat-bar-bg {
+    background-color: #212121;
+    color: #fff;
+    padding: 0 .2rem;
+}
 </style>
