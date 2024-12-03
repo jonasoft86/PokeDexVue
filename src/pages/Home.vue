@@ -1,17 +1,26 @@
 <script setup lang="ts">
     import PokemonCardList from '../components/PokemonCardList.vue';
     import { usePokemons } from '../composables/';
-    const { count, pokemons, isLoading, isError, error } = usePokemons();
+    import Pagination from '../components/Pagination.vue';
+
+    let { pokemons, isLoading, isError, error, currentPage, totalPages, getPage } = usePokemons();
+
 </script>
 
 <template>
     <main>
-        <h2 class="title" id="title">Lista Pokemones - {{ count }}</h2>
+        <h2 class="title" id="title">Lista Pokemones</h2>
         <h1 v-if="isLoading">Cargando lista Pokemons...</h1>
         <div v-else-if="isError">{{ error }}</div>
-          <div id="container" class="container">
-            <PokemonCardList v-if="!isLoading" :key=0 class="container" :pokemons="pokemons ?? []"></PokemonCardList>
-          </div>
+        <Pagination 
+                :pokemonPage="25" 
+                :pokemonsTotal="151"  
+                :currentPage="currentPage"
+                @changePage="getPage" 
+        />   
+        <div id="container" class="container"> 
+        <PokemonCardList v-if="!isLoading" :key=0 class="container" :pokemons="pokemons ?? []"></PokemonCardList>
+        </div>
     </main>
 </template>
 
