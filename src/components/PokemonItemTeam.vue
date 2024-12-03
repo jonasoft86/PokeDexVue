@@ -49,8 +49,8 @@
         <div class="select">
             <button 
                 class="botonSelect" 
-                @click="store.setPokemon(pokemon)" >
-                    Seleccionar
+                @click="store.deletePokemon(pokemon)" >
+                    Eliminar
             </button>
         </div>
     </div>

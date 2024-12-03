@@ -7,10 +7,6 @@ export const usePokemonTeams = defineStore('charactersTeams', () => {
   const pokemonTeams = ref<Pokemon[]>([]);
   const currentCharacter = ref<Pokemon>();
 
-  const options = {
-    confirmButtonColor: '#41b882',
-  };
-
   const setPokemon = (_character: Pokemon) : void => {
     if(pokemonTeams.value.length>=6){
       Swal.fire({
@@ -35,8 +31,16 @@ export const usePokemonTeams = defineStore('charactersTeams', () => {
     }
   }
 
+  const deletePokemon = (_character: Pokemon) : void => {
+    pokemonTeams.value = pokemonTeams.value.filter(
+      (pokemon) => pokemon.id !== _character.id
+    );
+    
+  }
+
   return {
     pokemonTeams,
     setPokemon,
+    deletePokemon,
   };
 });
