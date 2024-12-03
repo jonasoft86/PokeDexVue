@@ -69,39 +69,11 @@
 <style lang="scss" scoped>
 @use "../assets/scss/pokemonTypes.scss";
 @use "../assets/scss/components/pokemonCard.scss";
+@use "../assets/scss/components/pokemonItemTeam.scss";
 
 .Info {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.Info .pokemon-stats {
-    display:flexbox;
-    justify-content:center;
-    align-items:flex-end;
- 
-    position: relative;
-    background-color: #fff;
-    margin-top: 1rem;
- 
-}
-
-
-.pokemon-stats .stat-row {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    margin: .5rem 0;
-    font-size: 10px;
-}
-
-.pokemon-stats .stat-bar {
-    background-color: #a2a2a2;
-}
-
-.pokemon-stats .stat-bar-bg {
-    background-color: #212121;
-    color: #fff;
-    padding: 0 .2rem;
-}
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
 </style>

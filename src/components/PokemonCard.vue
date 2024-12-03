@@ -16,11 +16,6 @@
         <div class="nombre">
             <h1>{{pokemon.name}}</h1>
         </div>
-        <div class="tipos" v-for="(poke, index) in pokemon.types">
-            <div :key="index" class="tipo">
-                <span>{{poke.type.name}}</span>
-            </div>
-        </div>
         <div>
             <img
                 :src="pokemon.sprites.other?.dream_world?.front_default"
