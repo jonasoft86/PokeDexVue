@@ -5,7 +5,7 @@
     const route = useRoute();
 
     const routeId = route.params.id
-    const { pokemon, isLoading, isError, errorMessage } = usePokemon(routeId.toString());
+    const { pokemon} = usePokemon(routeId.toString());
 </script>
 
 <template>
