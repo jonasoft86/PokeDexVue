@@ -7,24 +7,19 @@
         pokemon: Pokemon
     }
 
-    const props=defineProps<Props>();
+    defineProps<Props>();
 
     const router = useRouter();
-
     const store = usePokemonTeams();
-    //const setPokemon = storeToRefs(store);
 
-    /*
-    const goTo = () => {
+    const goTo = (idPage:number) => {
         router.push(
             {
                 name: 'pokemon-id',
-                params: {id: props.pokemon.id}
+                params: {id: idPage}
             }
         );
     }
-    */
-
 
 </script>
 
@@ -46,7 +41,13 @@
                 class="imagen"
             />
         </div>
+
         <div class="select">
+            <button 
+                class="botonSelect" 
+                @click="goTo(pokemon.id)" >
+                    Seleccionar
+            </button>
             <button 
                 class="botonSelect" 
                 @click="store.deletePokemon(pokemon)" >

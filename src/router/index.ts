@@ -11,18 +11,16 @@ const routes: RouteRecordRaw[] = [
         component: () => Home,
     },
     {
-        path: '/team',
-        component: Team,
-        meta: { name: 'Team' },
-        children: [
-          {
-            path: '/team/:id(\\d+)+', 
-            props: { title: 'Pokemon por ID'},
-            name: 'pokemon-id',
-            component: PokemonDetail
-          },
-        ]
-      },  
+        path: "/team",
+        name: "Team",
+        component: () => Team,
+    },
+    {
+      path: '/team/:id(\\d+)+', 
+      props: { title: 'Pokemon por ID'},
+      name: 'pokemon-id',
+      component: ()=> PokemonDetail
+    },  
     { 
         path: '/:pathMatch(.*)*', 
         name: 'NotFound', 

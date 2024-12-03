@@ -5,7 +5,6 @@
     import { storeToRefs } from 'pinia';
 
     const props=defineProps<SideBarProps>();
-
     const store = usePokemonTeams();
     const pokemonTeams = storeToRefs(store);
 </script>
